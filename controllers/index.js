@@ -1,7 +1,7 @@
 'use strict';
 
 
-var Product = require('../models/productModel');
+/*var Product = require('../models/productModel');
 
 
 module.exports = function (router) {
@@ -28,4 +28,28 @@ module.exports = function (router) {
         res.cookie('locale', req.params.locale);
         res.redirect('/');
     });
+
+
+
+    router.get('/');
+};
+
+*/
+
+
+var IndexModel = require('../models/index');
+
+
+module.exports = function (router) {
+
+    var model = new IndexModel();
+
+    router.get('/', function (req, res) {
+        console.log("something happening");
+
+        res.render('index', model);
+
+
+    });
+
 };
